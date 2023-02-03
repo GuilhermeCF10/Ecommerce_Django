@@ -10,9 +10,9 @@ Produtos
 {% block conteudo %}
 <div class="container-fluid">
     <div class="row" style="margin-top: 6%;">
-        <div class="col-sm-8 loja-colecao">
-            <div class="loja-item">
-                <div class="row">
+        <div>
+            <div>
+                <div style=" flex-wrap: wrap; display: flex;">
                     {% for produto in lista_produtos %}
                     <div class="col-md-4">
                         <div class="thumbnail"
@@ -55,13 +55,13 @@ Produtos
                         <a href="{% url 'listar_produtos' %}">
                             Todos</a>
                     </li>
-                    <!-- {% for c in lista_categorias %}
+                    {% for c in lista_categorias %}
                     <li {% if categoria.slug == c.slug %} class="active" {% endif %}>
                         <a href="{{ c.get_absolute_url }}">
                             {{ c.nome }}
                         </a>
                     </li>
-                    {% endfor %} -->
+                    {% endfor %}
                 </ol>
             </div>
         </div>
