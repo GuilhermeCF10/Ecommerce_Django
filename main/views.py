@@ -105,7 +105,7 @@ def adicionar_ao_carrinho(request, id_produto):
     if form.is_valid():
         dados = form.cleaned_data
         carrinho.adicionar(produto=produto, quantidade=dados['quantidade'], atualizar_quantidade=dados['atualizar'])
-    return redirect('carrinho:detalhes_carrinho')
+    return redirect('detalhes_carrinho')
 
 
 # ============================
@@ -115,7 +115,7 @@ def remover_do_carrinho(request, id_produto):
     carrinho = Carrinho(request)
     produto = get_object_or_404(Produto, id=id_produto)
     carrinho.remover(produto)
-    return redirect('carrinho:detalhes_carrinho')
+    return redirect('detalhes_carrinho')
 
 
 # ============================

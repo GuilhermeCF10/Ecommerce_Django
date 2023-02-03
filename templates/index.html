@@ -1,9 +1,53 @@
 {% extends "base.html" %}
 
 {% block conteudo %}
+{% load static %}
 
-<h2>Início</h2>
 
-<p>Você está na página principal</p>
+
+<div style="height: 80%; width: 100%;
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+background-color: #d3d3d3; ">
+
+    <div style="padding: 80px; background-color: #545E5E; display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-radius: 40px; ">
+        <div style="display: flex;
+min-height: 45vh;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+background-color: #545E5E;
+padding: 2%;
+border-radius: 40px;">
+            <img src="" alt="">
+            <img src="{% static 'img/GJ_Ecommerce_Dark.png' %} " alt="Ecommerce" style="height: 40vh;" />
+            <h1 style="font-size: 2rem; letter-spacing: 3px; color: #F2F2F2;">Ecommerce GJ</h1>
+        </div>
+
+        <div style="display: flex;
+min-height: 45vh;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+background-color: #545E5E;
+padding: 2%;
+border-radius: 40px;">
+            <a href="/produtos" style="font-size: 2rem; font-weight: 600; color: #FFF; margin-bottom: 20px;">
+                Conheça nossos produtos
+            </a>
+            <img src="{% static 'img/discount.png' %} " alt="Ecommerce" style="height: 25vh; border-radius: 10px;;" />
+            <span style="font-size: 1.5rem; font-weight: 300; color: #F2F2F2; margin-top: 20px;">
+                Temos descontos exclusivos!</span>
+        </div>
+    </div>
+
+
+</div>
 
 {% endblock conteudo %}

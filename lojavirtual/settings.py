@@ -190,4 +190,4 @@ LOGGING = {
     }
 }
 
-ID_CARRINHO = 'carrinho'
+ID_CARRINHO = 'main'

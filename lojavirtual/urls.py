@@ -35,7 +35,7 @@ urlpatterns = [
     path('fale-conosco/', views.ViewFaleConosco.as_view(),name="fale_conosco"),
 
     # Ajuda
-    path('ajuda/', TemplateView.as_view(template_name='ajuda.html'), name='ajuda'),
+    path('sobre/', TemplateView.as_view(template_name='sobre.html'), name='ajuda'),
 
     # Carrinho
     path('carrinho/', views.detalhes_carrinho, name='detalhes_carrinho'),

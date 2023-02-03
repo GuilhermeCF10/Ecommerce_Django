@@ -9,39 +9,44 @@ Produtos
 {% endblock %}
 
 {% block conteudo %}
-<div class="container">
-    <div class="row" style="margin-top: 6%">
-        <div class="col-sm-8 ">
-            <div class="loja-item">
-                <div class="row">
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="col-md-6 text-right">
-                                <img src="{% if produto.imagem %}
+<div style="width: 100%; display: flex; justify-content: center; align-items: center;">
+    <div style="margin-top: 1%; margin-bottom: 1%;">
+        <div
+            style="background-color: #545E5E; padding: 2%; border-radius: 20px; width: 70vw; display: flex; flex-direction: row;">
+            <div style=" ">
+                <img src="{% if produto.imagem %}
                                          {{ produto.imagem.url }}
                                       {% else %}
                                          {% static 'img/default.jpg' %}
-                                      {% endif %}" alt="Imagem de {{ produto.nome }}"
-                                    style="height: 170px; width: auto">
-                            </div>
-                            <div class="col-md-6" style="padding-left: 20px">
-                                <h3>{{ produto.nome }}</h3>
-                                <h6><a href="{{ produto.categoria.get_absolute_url }}">{{ produto.categoria }}</a></h6>
-                                <p class="text-muted">R$ {{ produto.preco }}</p>
-                                <!-- *!* -->
-                                <form action="{% url 'adicionar_ao_carrinho' produto.id %}" method="post">
-                                    {{ form_produto_carrinho }}
-                                    {% csrf_token %}
-                                    <input type="submit" value="Adicionar ao carrinho">
-                                </form>
-                                <!-- *!* -->
-                                <p>{{ produto.descricao|safe|linebreaksbr }}</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                                      {% endif %}" alt="Imagem de {{ produto.nome }}" style="width: 350px; ">
+
+            </div>
+            <div style="padding-left: 20px; width: 20%; ">
+                <h3 style="height: 20%; font-size: 2rem; font-weight: 700; color: #FFF;">{{ produto.nome }}</h3>
+                <h6><a href="{{ produto.categoria.get_absolute_url }}"
+                        style="height: 10%; font-size: 1.3rem; color: #F8F8F8; font-weight: 400;">
+                        {{ produto.categoria }}</a></h6>
+                <p style="height: 10%; font-size: 1.5rem; color: #F8F8F8; font-weight: 600;">
+                    R$ {{ produto.preco }}
+                </p>
+                <!-- *!* -->
+                <form action="{% url 'adicionar_ao_carrinho' produto.id %}" method="post">
+                    {{ form_produto_carrinho }}
+                    {% csrf_token %}
+                    <input type="submit" value="Adicionar ao carrinho"
+                        style="cursor: pointer; margin-top: 5%; width: 80%; border: 1px solid white; height: 50px; background-color: transparent; border-radius: 20px; color: white; font-weight: 400; font-size: 1.2rem; " />
+                </form>
+            </div>
+            <div style="flex: 1; display: flex; flex-direction: column;">
+                <h4 style="font-weight: 500; font-size: 1.5rem; color: #F2F2F2;">Descrição</h4>
+                <p style="margin-left: 10%; font-size: 1.3rem; color: #F2F2F2;">
+                    {{ produto.descricao|safe|linebreaksbr }}</p>
             </div>
         </div>
     </div>
+</div>
+</div>
+</div>
+</div>
 </div>
 {% endblock %}

@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block conteudo %}
+{% load static %}
+
+<div
+    style="flex:1; display: flex; flex-direction: column; align-items: center; background-color: #AEB7B7; height: 95%;">
+
+    <h2 style="width: 80%; margin-top: 5%; letter-spacing: 3px;font-size: 2.5rem;">Sobre</h2>
+    <img src="{% static 'img/GJ_Ecommerce_Light.png' %} " alt="Ecommerce"
+        style="height: 350px; border:1px solid #000; margin-bottom: 30px; border-radius: 20px;" />
+    <h3 style="letter-spacing: 2px; font-size: 2rem; font-weight: 600; margin-bottom: 30px;">Ecommerce GJ</h3>
+    <p style="letter-spacing: 1px; width: 50%; font-size: 2rem;">Sistema de ecommerce desenvolvido em Django baseado
+        no livro Python e
+        Django, do
+        autor Francisco Marcelo de
+        Barros Maciel</p>
+
+</div>
+
+{% endblock conteudo %}
