@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block titulo %}
+{% if categoria %}
+{{ categoria.nome }}
+{% else %}
+Produtos
+{% endif %}
+{% endblock %}
+{% block conteudo %}
+<div class="container-fluid">
+    <div class="row" style="margin-top: 6%;">
+        <div class="col-sm-8 loja-colecao">
+            <div class="loja-item">
+                <div class="row">
+                    {% for produto in lista_produtos %}
+                    <div class="col-md-4">
+                        <div class="thumbnail" style="background-color: #545E5E; padding: 2%; border-radius: 20px;">
+                            <a style="
+                                display: flex;
+                                justify-content: center;
+                                align-items: center; margin-bottom: 15px;" href="{{ produto.get_absolute_url }}">
+                                <img src="
+                                {% if produto.imagem %}
+                                {{ produto.imagem.url }}
+                                {% else %}
+                                {% static 'img/default.jpg' %}
+                                {% endif %}" alt="Imagem de {{ produto.nome }}"
+                                    style="height: 200px; width: auto; border-radius: 10px;">
+                            </a>
+                            <div class="caption">
+                                <h3 class="text-center">
+                                    <a href="{{ produto.get_absolute_url }}"
+                                        style="color: #F2F2F2; text-decoration: none; font-weight:500; letter-spacing: 1px;">
+                                        {{ produto.nome }}
+                                    </a>
+                                </h3>
+                                <p class="text-center" style="color: #F2F2F2; font-size: 1.5rem;">
+                                    R$ {{ produto.preco }}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3 col-sm-offset-1 loja-sidebar" style=" display: flex; justify-content: flex-end;;">
+            <div class="sidebar-module">
+                <h4 style="border-bottom: 1px solid #16C687; font-size: 2rem; letter-spacing: 3px;
+                ">Categorias</h4>
+                <ol class="list-unstyled">
+                    <li {% if not categoria %} class="active" {% endif %}>
+                        <a href="{% url 'listar_produtos' %}">
+                            Todos</a>
+                    </li>
+                    <!-- {% for c in lista_categorias %}
+                    <li {% if categoria.slug == c.slug %} class="active" {% endif %}>
+                        <a href="{{ c.get_absolute_url }}">
+                            {{ c.nome }}
+                        </a>
+                    </li>
+                    {% endfor %} -->
+                </ol>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
