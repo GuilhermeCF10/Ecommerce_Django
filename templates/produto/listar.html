@@ -56,11 +56,11 @@ Produtos
                             Todos</a>
                     </li>
                     {% for c in lista_categorias %}
-                    <li {% if categoria.slug == c.slug %} class="active" {% endif %}>
+                    <!-- <li {% if categoria.slug == c.slug %} class="active" {% endif %}>
                         <a href="{{ c.get_absolute_url }}">
                             {{ c.nome }}
                         </a>
-                    </li>
+                    </li> -->
                     {% endfor %}
                 </ol>
             </div>
