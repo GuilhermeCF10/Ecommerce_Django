@@ -10,13 +10,13 @@ Produtos
 {% block conteudo %}
 <div class="container-fluid">
     <div class="row" style="margin-top: 6%;">
-        <div>
+        <div class="col-9" style="">
             <div>
                 <div style=" flex-wrap: wrap; display: flex;">
                     {% for produto in lista_produtos %}
-                    <div class="col-md-4">
+                    <div class="col-4">
                         <div class="thumbnail"
-                            style="background-color: #545E5E; padding: 2%; border-radius: 20px; margin-bottom: 20px;">
+                            style="background-color: #545E5E; padding: 2%; border-radius: 20px; margin-bottom: 20px; overflow: hidden;">
                             <a style="
                                 display: flex;
                                 justify-content: center;
@@ -46,7 +46,7 @@ Produtos
                 </div>
             </div>
         </div>
-        <div class="col-sm-3 col-sm-offset-1 loja-sidebar" style=" display: flex; justify-content: flex-end;;">
+        <div class="col-3 col-sm-offset-1 loja-sidebar" style=" display: flex; justify-content: flex-end;;">
             <div class="sidebar-module">
                 <h4 style="border-bottom: 1px solid #16C687; font-size: 2rem; letter-spacing: 3px;
                 ">Categorias</h4>
@@ -56,11 +56,11 @@ Produtos
                             Todos</a>
                     </li>
                     {% for c in lista_categorias %}
-                    <!-- <li {% if categoria.slug == c.slug %} class="active" {% endif %}>
+                    <li {% if categoria.slug == c.slug %} class="active" {% endif %}>
                         <a href="{{ c.get_absolute_url }}">
                             {{ c.nome }}
                         </a>
-                    </li> -->
+                    </li>
                     {% endfor %}
                 </ol>
             </div>
