@@ -31,10 +31,6 @@ class ViewFaleConosco(FormView):
             #nome = formulario.cleaned_data['nome'] # Primeira forma
             #nome = formulario.instance.nome # Segunda forma
 
-
-
-
-
 # ======================
 #   Listar Produtos
 # ======================
